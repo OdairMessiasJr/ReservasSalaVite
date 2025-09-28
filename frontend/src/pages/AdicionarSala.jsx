@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import styles from '../styles/Form.module.css';
 import axios from 'axios';
-const apiClient = axios.create({ baseURL: 'http://localhost:3001/api' });
+const apiClient = axios.create({ baseURL: import.meta.env.VITE_API_URL + '/api' });
 export default function AdicionarSala() {
     const [nomeSala, setNomeSala] = useState('');
     const navigate = useNavigate();
