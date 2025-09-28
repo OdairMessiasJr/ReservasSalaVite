@@ -4,7 +4,24 @@ import admin from 'firebase-admin';
 
 // --- INICIALIZAÇÃO DO FIREBASE ---
 // Importa a chave de serviço que você baixou
-import serviceAccount from './serviceAccountKey.json' assert { type: 'json' };
+// --- INICIALIZAÇÃO DO FIREBASE ---
+import fs from 'fs'; // Precisamos do fs para ler o arquivo localmente
+
+// Checa se estamos em produção (no Render) ou em desenvolvimento (local)
+const serviceAccountPath = './serviceAccountKey.json';
+let serviceAccount;
+
+if (process.env.FIREBASE_CREDENTIALS) {
+    // Em produção (Render), lê a variável de ambiente
+    serviceAccount = JSON.parse(process.env.FIREBASE_CREDENTIALS);
+} else if (fs.existsSync(serviceAccountPath)) {
+    // Em desenvolvimento, lê o arquivo local
+    const serviceAccountFile = fs.readFileSync(serviceAccountPath, 'utf8');
+    serviceAccount = JSON.parse(serviceAccountFile);
+} else {
+    console.error('ERRO: Chave de serviço do Firebase não encontrada. Defina a variável de ambiente FIREBASE_CREDENTIALS ou coloque o arquivo serviceAccountKey.json na pasta backend.');
+    process.exit(1); // Encerra o processo se não encontrar a chave
+}
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount)
