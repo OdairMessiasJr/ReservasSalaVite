@@ -1,9 +1,88 @@
-.calendarContainer { padding: 2rem; background-color: #fff; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
-.loading { text-align: center; font-size: 1.2rem; color: #555; padding: 3rem; }
-.header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; flex-wrap: wrap; }
-.title { margin: 0; flex-grow: 1; }
-.datePickerContainer { display: flex; gap: 0.5rem; align-items: center; }
-.datePicker { padding: 0.5rem; border-radius: 5px; border: 1px solid #ccc; font-size: 1rem; }
-.datePickerButton { padding: 0.6rem 1rem; border-radius: 5px; border: none; background-color: #0070f3; color: white; font-size: 0.9rem; font-weight: bold; cursor: pointer; transition: background-color 0.2s; }
-.datePickerButton:hover { background-color: #005bb5; }
-@media (max-width: 768px) { .header { flex-direction: column; gap: 1.5rem; align-items: stretch; } .title { text-align: center; } .datePickerContainer { justify-content: center; } }
+.calendarContainer {
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.loading {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #555;
+    padding: 3rem;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.title {
+    margin: 0;
+    flex-grow: 1;
+}
+
+.datePickerContainer {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.datePicker {
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+
+.datePickerButton {
+    padding: 0.6rem 1rem;
+    border-radius: 5px;
+    border: none;
+    background-color: #0070f3;
+    color: white;
+    font-size: 0.9rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.datePickerButton:hover {
+    background-color: #005bb5;
+}
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        gap: 1.5rem;
+        align-items: stretch;
+    }
+
+    .title {
+        text-align: center;
+    }
+
+    .datePickerContainer {
+        justify-content: center;
+    }
+}
+/* Verifique se este código existe no seu Calendario.module.css */
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        gap: 1.5rem;
+        align-items: stretch;
+    }
+
+    .title {
+        text-align: center;
+    }
+
+    .datePickerContainer {
+        justify-content: center;
+    }
+}

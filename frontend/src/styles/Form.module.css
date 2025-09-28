@@ -1,7 +1,57 @@
-.title { text-align: center; margin-bottom: 2rem; color: #333; }
-.form { max-width: 500px; margin: 0 auto; padding: 2rem; background-color: #fff; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
-.formGroup { margin-bottom: 1.5rem; }
-.formGroup label { display: block; margin-bottom: 0.5rem; font-weight: 600; color: #555; }
-.formGroup input { width: 100%; padding: 0.75rem; border: 1px solid #ccc; border-radius: 5px; font-size: 1rem; }
-.button { width: 100%; padding: 0.8rem; background-color: #0070f3; color: white; border: none; border-radius: 5px; font-size: 1.1rem; font-weight: bold; cursor: pointer; transition: background-color 0.3s; }
-.button:hover { background-color: #005bb5; }
+.title {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+.form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.formGroup {
+    margin-bottom: 1.5rem;
+}
+
+.formGroup label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #555;
+}
+
+.formGroup input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.button {
+    width: 100%;
+    padding: 0.8rem;
+    background-color: #0070f3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: #005bb5;
+}
+/* Adicione ao final do seu Form.module.css */
+
+@media (max-width: 576px) {
+    .form {
+        padding: 1.5rem; /* Diminui o padding em telas muito pequenas */
+    }
+}

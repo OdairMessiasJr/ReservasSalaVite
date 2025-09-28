@@ -1,9 +1,116 @@
-.navbar { width: 100%; padding: 1rem 2rem; background-color: #ffffff; box-shadow: 0 2px 4px rgba(0,0,0,0.1); display: flex; justify-content: space-between; align-items: center; }
-.brand { display: flex; align-items: center; flex-shrink: 0; }
-.title { flex-grow: 1; text-align: center; color: #c00; }
-.title h1 { margin: 0; font-size: 1.8rem; font-weight: 700; }
-.navList { list-style: none; display: flex; gap: 1.5rem; margin: 0; padding: 0; align-items: center; flex-shrink: 0; }
-.navList a { font-size: 1rem; color: #555; transition: color 0.2s ease-in-out; white-space: nowrap; }
-.navList a:hover, .navList a.active { color: #0070f3; font-weight: bold; }
-.authButton { background-color: #dc3545; color: white; border: none; padding: 0.5rem 1rem; border-radius: 5px; cursor: pointer; font-size: 1rem; }
-.loginLink { background-color: #0070f3; color: white; padding: 0.5rem 1rem; border-radius: 5px; }
+.navbar {
+    width: 100%;
+    padding: 1rem 2rem;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.title {
+    flex-grow: 1;
+    text-align: center;
+    color: #c00;
+}
+
+.title h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.navList {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.navList a {
+    font-size: 1rem;
+    color: #555;
+    transition: color 0.2s ease-in-out;
+    white-space: nowrap;
+}
+
+.navList a:hover,
+.navList a.active {
+    color: #0070f3;
+    font-weight: bold;
+}
+
+.authButton {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.loginLink {
+    background-color: #0070f3;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+}
+/* Adicione este código ao final do seu Navbar.module.css */
+
+/* Esconde o botão hambúrguer em telas grandes */
+.hamburger {
+    display: none;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: #333;
+    cursor: pointer;
+}
+
+/* Media Query para telas menores (tablets e celulares) */
+@media (max-width: 992px) {
+    .title {
+        display: none; /* Opcional: esconde o título central para dar mais espaço */
+    }
+
+    .navList {
+        /* Esconde a lista de links e a posiciona fora da tela */
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px; /* Altura da navbar */
+        right: 0;
+        width: 100%;
+        background-color: white;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        padding: 1rem 0;
+        z-index: 100;
+    }
+
+    /* Quando o menu está aberto, mostra a lista */
+    .navList.open {
+        display: flex;
+        align-items: center;
+    }
+
+    .navList li {
+        width: 100%;
+        text-align: center;
+        padding: 1rem 0;
+    }
+
+    /* Mostra o botão hambúrguer */
+    .hamburger {
+        display: block;
+    }
+}

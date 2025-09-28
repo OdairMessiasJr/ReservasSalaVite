@@ -167,3 +167,43 @@
 .durationFields .formGroup {
     flex: 1;
 }
+/* Adicione/modifique estas regras no seu Home.module.css */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap; /* Já ajuda na responsividade */
+    gap: 1rem; /* Adiciona um espaçamento */
+}
+
+/* Garante que o título e o seletor de data se comportem bem */
+.header h1 {
+    flex-grow: 1; /* Permite que ele cresça */
+    margin: 0;
+}
+.datePickerContainer {
+    flex-shrink: 0; /* Impede que ele encolha demais */
+}
+
+/* Media Query para o layout da home */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column; /* Empilha o título e o seletor de data */
+        align-items: center;
+        text-align: center;
+    }
+    
+    /* Garante que os cards ocupem a largura total */
+    .salaList {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Ajuste para o modal em telas pequenas */
+.modalContent {
+    background: white; padding: 1.5rem; border-radius: 8px; /* Padding menor */
+    width: 95%; /* Ocupa mais da tela */
+    max-width: 500px;
+}
