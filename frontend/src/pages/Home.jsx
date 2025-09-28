@@ -3,7 +3,7 @@ import { useAuth } from '../context/AuthContext';
 import styles from './Home.module.css';
 import axios from 'axios';
 
-const apiClient = axios.create({ baseURL: 'http://localhost:3001/api' });
+const apiClient = axios.create({ baseURL: import.meta.env.VITE_API_URL + '/api' });
 const getTodayString = () => new Date().toISOString().split('T')[0];
 
 export default function Home() {
