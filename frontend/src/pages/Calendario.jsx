@@ -10,7 +10,7 @@ import 'react-big-calendar/lib/css/react-big-calendar.css';
 import styles from './Calendario.module.css';
 const locales = { 'pt-BR': ptBR };
 const localizer = dateFnsLocalizer({ format, parse, startOfWeek: () => startOfWeek(new Date(), { locale: ptBR }), getDay, locales });
-const apiClient = axios.create({ baseURL: import.meta.env.VITE_API_URL + '/api' });
+const apiClient = axios.create({ baseURL: '/api' });
 const getTodayString = () => new Date().toISOString().split('T')[0];
 const converterReservasParaEventos = (reservas) => {
     return reservas.map(reserva => ({

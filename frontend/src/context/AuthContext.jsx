@@ -1,7 +1,7 @@
 import { createContext, useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-const apiClient = axios.create({ baseURL: import.meta.env.VITE_API_URL + '/api' });
+const apiClient = axios.create({ baseURL: '/api' });
 const AuthContext = createContext();
 export function AuthProvider({ children }) {
   const [isAdmin, setIsAdmin] = useState(false);

@@ -3,7 +3,7 @@ import { useAuth } from '../context/AuthContext';
 import styles from './Home.module.css';
 import axios from 'axios';
 
-const apiClient = axios.create({ baseURL: import.meta.env.VITE_API_URL + '/api' });
+const apiClient = axios.create({ baseURL: '/api' });
 const getTodayString = () => new Date().toISOString().split('T')[0];
 
 export default function Home() {
@@ -49,7 +49,7 @@ export default function Home() {
 
             // Envia os novos dados para a API
             try {
-                await apiClient.post('/reservas', reserva);
+                await apiClient.post('/reservas/create', reserva);
                 alert('Sala reservada com sucesso!');
                 fecharModalReserva();
                 fetchData();
