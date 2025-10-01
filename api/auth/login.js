@@ -1,5 +1,4 @@
 export default async function handler(request, response) {
-  // A função só aceita o método POST
   if (request.method !== 'POST') {
     return response.status(405).json({ message: 'Method Not Allowed' });
   }
@@ -7,14 +6,17 @@ export default async function handler(request, response) {
   try {
     const { username, password } = await request.json();
 
-    // A mesma lógica de antes, apenas em um novo formato
-    if (username === 'admin' && password === 'admin123') {
+    // Lê o usuário e a senha das variáveis de ambiente que configuramos na Vercel
+    const adminUsername = process.env.ADMIN_USERNAME;
+    const adminPassword = process.env.ADMIN_PASSWORD;
+
+    // Compara os dados recebidos com os valores seguros do ambiente
+    if (username === adminUsername && password === adminPassword) {
       return response.status(200).json({ message: 'Login bem-sucedido' });
     } else {
       return response.status(401).json({ message: 'Credenciais inválidas' });
     }
   } catch (error) {
-    // Caso a requisição venha sem um corpo JSON válido
     return response.status(400).json({ message: 'Corpo da requisição inválido' });
   }
 }
