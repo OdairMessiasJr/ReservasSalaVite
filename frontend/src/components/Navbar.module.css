@@ -65,9 +65,7 @@
     padding: 0.5rem 1rem;
     border-radius: 5px;
 }
-/* Adicione este código ao final do seu Navbar.module.css */
 
-/* Esconde o botão hambúrguer em telas grandes */
 .hamburger {
     display: none;
     font-size: 2rem;
@@ -77,27 +75,24 @@
     cursor: pointer;
 }
 
-/* Media Query para telas menores (tablets e celulares) */
 @media (max-width: 992px) {
     .title {
-        display: none; /* Opcional: esconde o título central para dar mais espaço */
+        display: none;
     }
 
     .navList {
-        /* Esconde a lista de links e a posiciona fora da tela */
         display: none;
         flex-direction: column;
         position: absolute;
-        top: 70px; /* Altura da navbar */
+        top: 70px;
         right: 0;
         width: 100%;
         background-color: white;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         padding: 1rem 0;
         z-index: 100;
     }
 
-    /* Quando o menu está aberto, mostra a lista */
     .navList.open {
         display: flex;
         align-items: center;
@@ -109,7 +104,6 @@
         padding: 1rem 0;
     }
 
-    /* Mostra o botão hambúrguer */
     .hamburger {
         display: block;
     }

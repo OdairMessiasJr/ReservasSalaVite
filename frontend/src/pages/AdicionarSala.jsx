@@ -3,12 +3,15 @@ import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import styles from '../styles/Form.module.css';
 import axios from 'axios';
+
 const apiClient = axios.create({ baseURL: '/api' });
+
 export default function AdicionarSala() {
     const [nomeSala, setNomeSala] = useState('');
     const navigate = useNavigate();
     const { isAdmin } = useAuth();
     useEffect(() => { if (!isAdmin) { navigate('/login'); } }, [isAdmin, navigate]);
+    
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
@@ -17,7 +20,9 @@ export default function AdicionarSala() {
             navigate('/');
         } catch (error) { alert('Falha ao adicionar a sala.'); }
     };
-    if (!isAdmin) return <p>Redirecionando...</p>;
+
+    if (!isAdmin) return <p>Acesso negado. Redirecionando...</p>;
+    
     return (
         <div>
             <h1 className={styles.title}>Adicionar Nova Sala</h1>

@@ -1,16 +1,9 @@
 {
-  "name": "Reservassalavite",
+  "name": "sistema-reservas",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "type": "module",  
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "private": true,
+  "type": "module",
   "dependencies": {
-    "@vercel/postgres": "^0.10.0" 
+    "@vercel/postgres": "^0.9.0"
   }
 }

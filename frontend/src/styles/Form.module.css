@@ -48,10 +48,9 @@
 .button:hover {
     background-color: #005bb5;
 }
-/* Adicione ao final do seu Form.module.css */
 
 @media (max-width: 576px) {
     .form {
-        padding: 1.5rem; /* Diminui o padding em telas muito pequenas */
+        padding: 1.5rem;
     }
 }

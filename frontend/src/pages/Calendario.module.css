@@ -69,20 +69,3 @@
         justify-content: center;
     }
 }
-/* Verifique se este código existe no seu Calendario.module.css */
-
-@media (max-width: 768px) {
-    .header {
-        flex-direction: column;
-        gap: 1.5rem;
-        align-items: stretch;
-    }
-
-    .title {
-        text-align: center;
-    }
-
-    .datePickerContainer {
-        justify-content: center;
-    }
-}
