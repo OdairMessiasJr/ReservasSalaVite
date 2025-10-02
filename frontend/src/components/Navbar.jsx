@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import styles from './Navbar.module.css';
-import logo from '../assets/logo.png';
+import logo from '../assets/logo.svg';
 
 export default function Navbar() {
   const { isAdmin, logout } = useAuth();
