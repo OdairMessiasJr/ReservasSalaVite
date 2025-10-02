@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "type": "module",  // <-- Posição correta: no nível principal
+  "type": "module",  
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -11,6 +11,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@vercel/postgres": "^0.10.0" // <-- Apenas dependências aqui
+    "@vercel/postgres": "^0.10.0" 
   }
 }
