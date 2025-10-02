@@ -3,7 +3,12 @@ import { sql } from '@vercel/postgres';
 export default async function handler(request, response) {
   try {
     if (request.method === 'GET') {
-        const dataFiltro = request.nextUrl.searchParams.get('data');
+        // --- CORREÇÃO AQUI ---
+        // Criamos um objeto URL para extrair os parâmetros de forma segura
+        const url = new URL(request.url, `http://${request.headers.host}`);
+        const dataFiltro = url.searchParams.get('data');
+        // --- FIM DA CORREÇÃO ---
+
         if (!dataFiltro) return response.status(400).json({ message: 'A data é obrigatória' });
         
         const { rows } = await sql`SELECT id, sala_id, responsavel, data, to_char(horario_inicio, 'HH24:MI') as horario_inicio, to_char(horario_fim, 'HH24:MI') as horario_fim FROM reservas WHERE data = ${dataFiltro};`;
