@@ -22,7 +22,7 @@
       "handle": "filesystem"
     },
     {
-      "frontend": "/(.*)",
+      "src": "/(.*)",
       "dest": "/index.html"
     }
   ]
