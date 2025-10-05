@@ -12,3 +12,4 @@ yarn-error.log*
 
 # Variáveis de ambiente locais
 .env.local
+.vercel

@@ -5,5 +5,8 @@
   "type": "module",
   "dependencies": {
     "@vercel/postgres": "^0.9.0"
+  },
+  "devDependencies": {
+    "vercel": "^48.2.0"
   }
 }

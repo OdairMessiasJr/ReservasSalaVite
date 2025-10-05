@@ -1,17 +1,12 @@
 {
   "version": 2,
+  "buildCommand": "cd frontend && npm install && npm run build",
+  "outputDirectory": "frontend/dist",
+  "installCommand": "cd frontend && npm install",
   "builds": [
     {
       "src": "api/**/*.mjs",
       "use": "@vercel/node"
-    },
-    {
-      "src": "frontend/package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "buildCommand": "cd frontend && npm install && npm run build",
-        "outputDirectory": "frontend/dist"
-      }
     }
   ],
   "routes": [
@@ -20,11 +15,15 @@
       "dest": "/api/$1.mjs"
     },
     {
+      "src": "/(assets|images|logo)/(.*)",
+      "dest": "/assets/$2"
+    },
+    {
       "handle": "filesystem"
     },
     {
       "src": "/(.*)",
-      "dest": "/frontend/index.html"
+      "dest": "/index.html"
     }
   ]
 }
