@@ -1,0 +1,8 @@
+{
+  "name": "reservas-sala-api",
+  "version": "1.0.0",
+  "dependencies": {
+    "@vercel/postgres": "^0.5.0",
+    "jsonwebtoken": "^9.0.2"
+  }
+}
